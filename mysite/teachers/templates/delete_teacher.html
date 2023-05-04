@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+    {% block title %}
+        Delete teacher
+    {% endblock %}
+
+    {% block content %}
+<h2>Delete teacher:</h2>
+<h3> Are you sure you want to delete teacher: {{ teacher.first_name }} {{ teacher.last_name }} with id: {{ teacher.id }}?</h3>
+<form action="{% url 'delete_teacher' teacher.id %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Delete">
+</form>
+    {% endblock %}

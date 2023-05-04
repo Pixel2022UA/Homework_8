@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Our groups:
+{% endblock %}
+
+{% block content %}
+    <h2>Our groups:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Group name</th>
+                <th>Group teacher</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group in groups %}
+                <tr>
+                    <td>{{ group.group_name }}</td>
+                    <td>{{ group.teacher }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

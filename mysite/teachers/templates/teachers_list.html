@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Our teachers:
+{% endblock %}
+
+{% block content %}
+    <h2>Our teachers:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Full name</th>
+                <th>Date of birth</th>
+                <th>Subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+                <tr>
+                    <td>{{ teacher.first_name }} {{ teacher.last_name }}</td>
+                    <td>{{ teacher.date_of_birthday }}</td>
+                    <td> - {{ teacher.subject }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

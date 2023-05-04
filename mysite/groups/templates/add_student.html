@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+    {% block title %}
+        Create student group:
+    {% endblock %}
+
+    {% block content %}
+<h2>Create new student group:</h2>
+
+<form action="{% url 'groups:add_student' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Send">
+</form>
+    {% endblock %}
+
+
+

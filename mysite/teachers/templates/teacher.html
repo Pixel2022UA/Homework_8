@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+    {% block title %}
+        Add new teacher
+    {% endblock %}
+
+    {% block content %}
+<h2>Add new teacher or send random:</h2>
+
+<form action="{% url 'add_teacher' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Send">
+</form>
+    {% endblock %}
+
+
+

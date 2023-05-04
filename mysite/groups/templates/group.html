@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+    {% block title %}
+        Create group:
+    {% endblock %}
+
+    {% block content %}
+<h2>Create new group:</h2>
+
+<form action="{% url 'groups:add_group' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Send">
+</form>
+    {% endblock %}
+
+
+

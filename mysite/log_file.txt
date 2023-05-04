@@ -1,0 +1,5 @@
+GET request to / took 0.00999903678894043 seconds
+GET request to /teachers/ took 0.0125 seconds
+GET request to /teachers/add-teacher/ took 0.02796 seconds
+POST request to /teachers/add-teacher/ took 0.109828 seconds
+GET request to /teachers/teachers-list/ took 0.003656 seconds
