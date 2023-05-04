@@ -16,3 +16,9 @@ class Group(models.Model):
 class StudentsGroup(models.Model):
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
+
+
+class LogMiddlewareModel(models.Model):
+    path = models.CharField(max_length=255)
+    method = models.CharField(max_length=10)
+    execution_time = models.DecimalField(max_digits=50, decimal_places=50)

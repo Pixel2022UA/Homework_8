@@ -1,4 +1,5 @@
 import time
+from groups.models import LogMiddlewareModel
 
 
 class LogMiddleware:
@@ -14,5 +15,10 @@ class LogMiddleware:
 
         with open("log_file.txt", "a") as log_file:
             log_file.write(log_message)
+
+        log = LogMiddlewareModel(
+            path=request.path, method=request.method, execution_time=execution_time
+        )
+        log.save()
 
         return response
